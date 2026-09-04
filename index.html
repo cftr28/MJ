@@ -2152,21 +2152,19 @@ Y tacones. <br>
             }).catch(err => console.log(err));
 
         }, { once: true });
+   
         const urlDatos = new URLSearchParams(window.location.search);
 
-        const nombre = urlDatos.get("invitado");
-        const cantidad = urlDatos.get("pases");
+const nombre = urlDatos.get("invitado");
+const cantidad = urlDatos.get("pases");
 
+if (nombre) {
+    document.getElementById("nombre-invitado").textContent = decodeURIComponent(nombre);
+}
 
-        if (nombre) {
-            document.getElementById("nombre-invitado").innerText = nombre;
-        }
-
-
-        if (cantidad) {
-            document.getElementById("num-pases").innerText = cantidad;
-        }
-
+if (cantidad) {
+    document.getElementById("num-pases").textContent = cantidad;
+}
 
 
 
@@ -2287,18 +2285,7 @@ Y tacones. <br>
 
         // Iniciar el carrusel automáticamente al cargar
         startAutoPlay();
-const urlDatosInvitado = new URLSearchParams(window.location.search);
 
-const nombreInvitadoURL = urlDatosInvitado.get("invitado");
-const cantidadPasesURL = urlDatosInvitado.get("pases");
-
-if (nombreInvitadoURL) {
-    document.getElementById("nombre-invitado").textContent = nombreInvitadoURL;
-}
-
-if (cantidadPasesURL) {
-    document.getElementById("num-pases").textContent = cantidadPasesURL;
-}
     </script>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -2309,7 +2296,6 @@ if (cantidadPasesURL) {
             once: true
         });
     </script>
-    
 </body>
 
 </html>
