@@ -2152,21 +2152,21 @@ Y tacones. <br>
             }).catch(err => console.log(err));
 
         }, { once: true });
-   // DATOS DEL INVITADO
+// DATOS DEL INVITADO
 const urlDatos = new URLSearchParams(window.location.search);
 
 let nombre = urlDatos.get("invitado");
 const cantidad = urlDatos.get("pases");
 
 if (nombre) {
-    nombre = nombre.replace(/%20/g, " ");
+    nombre = nombre.replace(/%20/gi, " ");
+    nombre = nombre.replace(/\+/g, " ");
     document.getElementById("nombre-invitado").textContent = nombre;
 }
 
 if (cantidad) {
     document.getElementById("num-pases").textContent = cantidad;
 }
-
 
 
         const wrapper = document.querySelector('.carrusel-wrapper');
